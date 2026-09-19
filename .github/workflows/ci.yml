@@ -1,0 +1,125 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      - run: yarn lint
+
+      - run: yarn test:coverage
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage
+          path: coverage/
+
+  e2e:
+    name: E2E Tests
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.CI_DATABASE_URL }}
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: ${{ secrets.CI_NEXTAUTH_SECRET }}
+      AUTH_GOOGLE_ID: ${{ secrets.CI_AUTH_GOOGLE_ID }}
+      AUTH_GOOGLE_SECRET: ${{ secrets.CI_AUTH_GOOGLE_SECRET }}
+      STRIPE_SECRET_KEY: ${{ secrets.CI_STRIPE_SECRET_KEY }}
+      STRIPE_PUBLISHABLE_KEY: ${{ secrets.CI_STRIPE_PUBLISHABLE_KEY }}
+      STRIPE_WEBHOOK_SECRET: ${{ secrets.CI_STRIPE_WEBHOOK_SECRET }}
+      RESEND_API_KEY: ${{ secrets.CI_RESEND_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      - run: npx playwright install --with-deps chromium
+
+      - run: yarn build
+
+      - name: Run E2E tests
+        run: |
+          yarn start &
+          npx wait-on http://localhost:3000 --timeout 30000
+          yarn test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+
+  audit:
+    name: Package Audit
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      - run: yarn npm audit
+
+  sonarqube:
+    name: SonarQube
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+  deploy:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
+    needs: [lint-and-test, e2e]
+    env:
+      IS_MAIN: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set Vercel args
+        id: vercel-args
+        run: |
+          if [ "$IS_MAIN" = "true" ]; then
+            echo "args=--prod" >> "$GITHUB_OUTPUT"
+          else
+            echo "args=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: ${{ steps.vercel-args.outputs.args }}
