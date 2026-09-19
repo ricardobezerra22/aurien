@@ -21,7 +21,170 @@
 		"description": "Un puente tranquilo y basado en evidencia entre el autodescubrimiento y el apoyo profesional.",
 		"cta": "Iniciar la evaluación",
 		"ctaSecondary": "Cómo funciona",
-		"disclaimer": "La evaluación no es un diagnóstico. Los resultados se basan en información autoinformada."
+		"disclaimer": "La evaluación no es un diagnóstico. Los resultados se basan en información autoinformada.",
+		"hero": {
+			"headline": "¿Podrían tus experiencias estar relacionadas con el autismo?",
+			"body": "Explora rasgos autistas comunes a través de un cuestionario de evaluación estructurado diseñado para adultos. Tus resultados pueden ayudarte a decidir si vale la pena hablar con un profesional sobre una evaluación.",
+			"ctaPrimary": "Unirse a la lista de espera",
+			"ctaSecondary": "Cómo funciona"
+		},
+		"waitlist": {
+			"placeholder": "tu@email.com",
+			"cta": "Unirse a la lista de espera",
+			"success": "Estás en la lista. Nos pondremos en contacto pronto.",
+			"errorGeneric": "Algo salió mal. Por favor, inténtalo de nuevo."
+		},
+		"trust": {
+			"private": {
+				"label": "Privacidad por diseño",
+				"desc": "Tus respuestas se usan solo para calcular tu resultado."
+			},
+			"adult": {
+				"label": "Enfocado en adultos",
+				"desc": "Diseñado para adultos, no adaptado de herramientas para niños."
+			},
+			"evidence": {
+				"label": "Basado en evidencia",
+				"desc": "Basado en instrumentos de evaluación validados."
+			},
+			"shareable": {
+				"label": "Resultados compartibles",
+				"desc": "Exporta un informe PDF para compartir con un clínico."
+			}
+		},
+		"educational": {
+			"heading": "Entendiendo el autismo en adultos",
+			"intro": "El autismo puede presentarse de manera muy diferente entre personas. Algunos adultos solo comienzan a explorar esta posibilidad más tarde en la vida.",
+			"sensory": {
+				"title": "Experiencias sensoriales",
+				"body": "Algunos adultos autistas reportan hipersensibilidad o hiposensibilidad al sonido, la luz, la textura u otros estímulos sensoriales."
+			},
+			"executive": {
+				"title": "Enfoque y rutinas",
+				"body": "Algunos adultos autistas describen patrones intensos de enfoque, preferencia por la predictibilidad o dificultad con cambios inesperados en la rutina."
+			},
+			"social": {
+				"title": "Comunicación social",
+				"body": "Algunos adultos autistas experimentan diferencias en la comunicación social — no déficits, sino diferencias en cómo se experimenta la conexión, la conversación y el contexto."
+			},
+			"imageAlt": "Ilustración editorial abstracta que representa experiencias sensoriales, rutinas y enfoque a través de círculos superpuestos",
+			"humanAlt": "Dos adultos teniendo una conversación tranquila y reflexiva en una cafetería"
+		},
+		"howItWorks": {
+			"heading": "Cómo funciona",
+			"step1": {
+				"num": "01",
+				"title": "Explorar",
+				"body": "Aprende qué está diseñado para explorar el cuestionario y qué no puede decirte."
+			},
+			"step2": {
+				"num": "02",
+				"title": "Responder",
+				"body": "Completa un cuestionario estructurado a tu propio ritmo. Una pregunta a la vez."
+			},
+			"step3": {
+				"num": "03",
+				"title": "Comprender",
+				"body": "Revisa tus resultados de evaluación y la evidencia detrás de cada respuesta."
+			},
+			"step4": {
+				"num": "04",
+				"title": "Decidir",
+				"body": "Elige si tiene sentido para ti hablar de los resultados con un profesional calificado."
+			}
+		},
+		"screeningPreview": {
+			"heading": "Diseñado para reducir la carga cognitiva",
+			"badge": "Vista previa",
+			"progress": "Pregunta 8 de 32",
+			"question": "¿Te resulta difícil manejar cambios inesperados en tu rutina?",
+			"opt1": "Nunca",
+			"opt2": "Raramente",
+			"opt3": "A veces",
+			"opt4": "Frecuentemente",
+			"opt5": "Siempre"
+		},
+		"privacy": {
+			"heading": "Tus respuestas son tuyas.",
+			"pillar1": "Tus respuestas se usan solo para calcular tu resultado de evaluación.",
+			"pillar2": "Tú decides si generar o compartir un informe.",
+			"pillar3": "Solo recopilamos lo necesario.",
+			"link": "Lee nuestra política de privacidad"
+		},
+		"diagnosisDisclaimer": {
+			"heading": "La evaluación no es diagnóstico.",
+			"body": "Un cuestionario de evaluación puede identificar patrones que vale la pena explorar. No puede determinar si alguien es autista ni reemplazar una evaluación clínica.",
+			"screeningLabel": "Evaluación",
+			"screeningDesc": "Identifica patrones que pueden justificar una exploración más profunda con un profesional.",
+			"diagnosisLabel": "Diagnóstico clínico",
+			"diagnosisDesc": "Requiere una evaluación integral por un profesional calificado."
+		},
+		"resultsPreview": {
+			"heading": "Entiende lo que sugieren tus respuestas.",
+			"body": "Tu resultado es claro y contextualizado — mostrando lo que tus respuestas indicaron en diferentes dimensiones y lo que eso puede o no significar.",
+			"score": "Tus respuestas indican algunos rasgos que podrían valer la pena discutir con un profesional.",
+			"imageAlt": "Patrón estructurado abstracto que representa datos de evaluación organizados",
+			"cat1": "Procesamiento sensorial",
+			"cat2": "Comunicación social",
+			"cat3": "Función ejecutiva",
+			"cat4": "Patrones repetitivos"
+		},
+		"evidence": {
+			"heading": "Entiende cómo se obtuvo tu resultado.",
+			"body": "Tu resultado no es una caja negra. Explora cada dimensión que midió el cuestionario y cómo contribuyeron tus respuestas.",
+			"item1": {
+				"title": "Procesamiento sensorial",
+				"body": "Cómo experimentas la información sensorial, incluyendo hiper o hiposensibilidad a estímulos."
+			},
+			"item2": {
+				"title": "Comunicación social",
+				"body": "Patrones en cómo experimentas la interacción social, las señales no verbales y la conversación."
+			},
+			"item3": {
+				"title": "Función ejecutiva",
+				"body": "Cómo planificas, organizas, cambias de tarea y gestionas rutinas y transiciones."
+			},
+			"item4": {
+				"title": "Comportamientos repetitivos",
+				"body": "La presencia de intereses enfocados, rutinas o patrones repetitivos que brindan comodidad o estructura."
+			}
+		},
+		"pdf": {
+			"heading": "Lleva tus resultados contigo.",
+			"body": "Genera un informe de evaluación profesional para compartir con un clínico, terapeuta o médico. El informe incluye tus respuestas, puntuaciones y limitaciones importantes.",
+			"cta": "Únete para generar tu informe",
+			"disclaimer": "Este es un informe de evaluación, no un documento diagnóstico."
+		},
+		"clinicians": {
+			"heading": "¿Quieres explorar esto más a fondo?",
+			"body": "Después de completar una evaluación, puedes elegir discutir tus resultados con un profesional calificado. Auren te ayuda a encontrar a la persona adecuada.",
+			"imageAlt": "Un profesional y un cliente en una consulta tranquila y reflexiva",
+			"card1": {
+				"name": "Dra. Sarah Chen",
+				"title": "Psicóloga Clínica",
+				"location": "Londres, Reino Unido",
+				"specialty": "Evaluación de autismo en adultos"
+			},
+			"card2": {
+				"name": "Dr. Marco Alves",
+				"title": "Neuropsicólogo",
+				"location": "São Paulo, Brasil",
+				"specialty": "Condiciones del neurodesarrollo"
+			},
+			"online": "En línea",
+			"inPerson": "Presencial",
+			"verified": "Verificado"
+		},
+		"finalCta": {
+			"heading": "Empieza a explorar tus experiencias.",
+			"body": "Únete a la lista de espera y sé de los primeros en acceder a Auren cuando se lance.",
+			"imageAlt": "Círculos superpuestos abstractos en verde bosque y salvia que representan claridad a través del autodescubrimiento"
+		},
+		"footer": {
+			"tagline": "Más claridad. Mejores decisiones.",
+			"disclaimer": "Auren es una herramienta de evaluación, no un servicio de diagnóstico. Los resultados no deben reemplazar una evaluación clínica profesional.",
+			"privacy": "Política de privacidad"
+		}
 	},
 	"questionnaire": {
 		"progress": "{current} de {total}",

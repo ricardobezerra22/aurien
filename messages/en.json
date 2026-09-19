@@ -21,7 +21,170 @@
 		"description": "A calm, evidence-informed bridge between self-discovery and professional support.",
 		"cta": "Start the screening",
 		"ctaSecondary": "Learn how it works",
-		"disclaimer": "Screening is not a diagnosis. Results are based on self-reported information."
+		"disclaimer": "Screening is not a diagnosis. Results are based on self-reported information.",
+		"hero": {
+			"headline": "Could your experiences be related to autism?",
+			"body": "Explore common autistic traits through a structured screening questionnaire designed for adults. Your results can help you decide whether a professional evaluation may be worth discussing.",
+			"ctaPrimary": "Join the waitlist",
+			"ctaSecondary": "Learn how it works"
+		},
+		"waitlist": {
+			"placeholder": "your@email.com",
+			"cta": "Join the waitlist",
+			"success": "You're on the list. We'll be in touch.",
+			"errorGeneric": "Something went wrong. Please try again."
+		},
+		"trust": {
+			"private": {
+				"label": "Private by design",
+				"desc": "Your answers are used only to calculate your result."
+			},
+			"adult": {
+				"label": "Adult-focused",
+				"desc": "Built for adults, not adapted from tools designed for children."
+			},
+			"evidence": {
+				"label": "Evidence-informed",
+				"desc": "Based on validated screening instruments."
+			},
+			"shareable": {
+				"label": "Shareable results",
+				"desc": "Export a PDF report to share with a clinician."
+			}
+		},
+		"educational": {
+			"heading": "Understanding autism in adults",
+			"intro": "Autism can present very differently across individuals. Some adults only begin to explore the possibility later in life.",
+			"sensory": {
+				"title": "Sensory experiences",
+				"body": "Some autistic adults report heightened or reduced sensitivity to sound, light, texture, or other sensory input — experiences that may be subtle or significant."
+			},
+			"executive": {
+				"title": "Focus and routines",
+				"body": "Some autistic adults describe strong patterns of focus, a preference for predictability, or difficulty managing unexpected changes in routine."
+			},
+			"social": {
+				"title": "Social communication",
+				"body": "Some autistic adults experience differences in social communication — not deficits, but differences in how connection, conversation, and context are experienced."
+			},
+			"imageAlt": "Abstract editorial illustration representing sensory experiences, routines, and focus through overlapping circles",
+			"humanAlt": "Two adults having a calm, thoughtful conversation at a coffee shop"
+		},
+		"howItWorks": {
+			"heading": "How it works",
+			"step1": {
+				"num": "01",
+				"title": "Explore",
+				"body": "Learn what the screening is designed to explore and what it cannot tell you."
+			},
+			"step2": {
+				"num": "02",
+				"title": "Answer",
+				"body": "Complete a structured questionnaire at your own pace. One question at a time."
+			},
+			"step3": {
+				"num": "03",
+				"title": "Understand",
+				"body": "Review your screening results and the evidence behind each response."
+			},
+			"step4": {
+				"num": "04",
+				"title": "Decide",
+				"body": "Choose whether discussing the results with a qualified professional makes sense for you."
+			}
+		},
+		"screeningPreview": {
+			"heading": "Designed to reduce cognitive load",
+			"badge": "Preview",
+			"progress": "Question 8 of 32",
+			"question": "Do you find unexpected changes in routine difficult to manage?",
+			"opt1": "Never",
+			"opt2": "Rarely",
+			"opt3": "Sometimes",
+			"opt4": "Often",
+			"opt5": "Always"
+		},
+		"privacy": {
+			"heading": "Your answers are yours.",
+			"pillar1": "Your answers are used only to calculate your screening result.",
+			"pillar2": "You choose whether to generate or share a report.",
+			"pillar3": "We collect only what is necessary.",
+			"link": "Read our privacy policy"
+		},
+		"diagnosisDisclaimer": {
+			"heading": "Screening is not diagnosis.",
+			"body": "A screening questionnaire can identify patterns that may be worth exploring further. It cannot determine whether someone is autistic or replace an assessment by a qualified clinician.",
+			"screeningLabel": "Screening",
+			"screeningDesc": "Identifies patterns that may justify further exploration with a professional.",
+			"diagnosisLabel": "Clinical diagnosis",
+			"diagnosisDesc": "Requires a comprehensive assessment by a qualified professional."
+		},
+		"resultsPreview": {
+			"heading": "Understand what your responses suggest.",
+			"body": "Your result is clear and contextualised — showing what your responses indicated across different dimensions, and what that may or may not mean.",
+			"score": "Your responses indicate some traits that may be worth discussing with a professional.",
+			"imageAlt": "Abstract structured pattern representing organised screening data",
+			"cat1": "Sensory processing",
+			"cat2": "Social communication",
+			"cat3": "Executive function",
+			"cat4": "Repetitive patterns"
+		},
+		"evidence": {
+			"heading": "Understand how your result was reached.",
+			"body": "Your result is not a black box. Explore each dimension the questionnaire measured and how your answers contributed.",
+			"item1": {
+				"title": "Sensory processing",
+				"body": "How you experience sensory information, including over- or under-sensitivity to input."
+			},
+			"item2": {
+				"title": "Social communication",
+				"body": "Patterns in how you experience social interaction, nonverbal cues, and conversation."
+			},
+			"item3": {
+				"title": "Executive function",
+				"body": "How you plan, organise, switch tasks, and manage routines and transitions."
+			},
+			"item4": {
+				"title": "Repetitive behaviours",
+				"body": "The presence of focused interests, routines, or repetitive patterns that provide comfort or structure."
+			}
+		},
+		"pdf": {
+			"heading": "Take your results with you.",
+			"body": "Generate a professional screening report to share with a clinician, therapist, or GP. The report includes your responses, scores, and important limitations.",
+			"cta": "Join to generate your report",
+			"disclaimer": "This is a screening report, not a diagnostic document."
+		},
+		"clinicians": {
+			"heading": "Want to explore this further?",
+			"body": "After completing a screening, you can choose to discuss your results with a qualified professional. Auren helps you find the right person.",
+			"imageAlt": "A professional and a client in a calm, thoughtful consultation setting",
+			"card1": {
+				"name": "Dr. Sarah Chen",
+				"title": "Clinical Psychologist",
+				"location": "London, UK",
+				"specialty": "Adult autism assessment"
+			},
+			"card2": {
+				"name": "Dr. Marco Alves",
+				"title": "Neuropsychologist",
+				"location": "São Paulo, Brazil",
+				"specialty": "Neurodevelopmental conditions"
+			},
+			"online": "Online",
+			"inPerson": "In person",
+			"verified": "Verified"
+		},
+		"finalCta": {
+			"heading": "Start exploring your experiences.",
+			"body": "Join the waitlist and be among the first to access Auren when it launches.",
+			"imageAlt": "Abstract overlapping circles in forest and sage representing clarity through self-discovery"
+		},
+		"footer": {
+			"tagline": "More clarity. Better decisions.",
+			"disclaimer": "Auren is a screening tool, not a diagnostic service. Results should not replace professional clinical assessment.",
+			"privacy": "Privacy policy"
+		}
 	},
 	"questionnaire": {
 		"progress": "{current} of {total}",

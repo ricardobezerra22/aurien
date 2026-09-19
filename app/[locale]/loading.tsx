@@ -1,4 +1,8 @@
-export default function Loading() {
+import { getTranslations } from "next-intl/server";
+
+export default async function Loading() {
+	const t = await getTranslations("common");
+
 	return (
 		<div className="flex min-h-svh items-center justify-center">
 			<div className="flex flex-col items-center gap-5">
@@ -7,7 +11,9 @@ export default function Loading() {
 					<div className="absolute inset-0 rounded-full bg-sage opacity-60" />
 					<div className="absolute inset-0 translate-x-3 translate-y-1.5 rounded-full bg-sage-light opacity-40" />
 				</div>
-				<span className="text-sm text-text-muted tracking-wide">Loading…</span>
+				<span className="text-sm text-text-muted tracking-wide">
+					{t("loading")}
+				</span>
 			</div>
 		</div>
 	);

@@ -9,11 +9,23 @@ const schema = z.object({
 	AUTH_GOOGLE_ID: z.string().min(1),
 	AUTH_GOOGLE_SECRET: z.string().min(1),
 
-	STRIPE_SECRET_KEY: z.string().min(1).optional(),
-	STRIPE_PUBLISHABLE_KEY: z.string().min(1).optional(),
-	STRIPE_WEBHOOK_SECRET: z.string().min(1).optional(),
+	STRIPE_SECRET_KEY: z.preprocess(
+		(v) => v || undefined,
+		z.string().min(1).optional(),
+	),
+	STRIPE_PUBLISHABLE_KEY: z.preprocess(
+		(v) => v || undefined,
+		z.string().min(1).optional(),
+	),
+	STRIPE_WEBHOOK_SECRET: z.preprocess(
+		(v) => v || undefined,
+		z.string().min(1).optional(),
+	),
 
-	RESEND_API_KEY: z.string().min(1).optional(),
+	RESEND_API_KEY: z.preprocess(
+		(v) => v || undefined,
+		z.string().min(1).optional(),
+	),
 });
 
 const result = schema.safeParse(process.env);

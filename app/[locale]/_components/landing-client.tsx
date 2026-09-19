@@ -1,185 +1,200 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Globe } from "lucide-react";
-import { useLocale } from "next-intl";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { usePathname, useRouter } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
-import { handleGoogleSignIn } from "@/lib/actions/auth";
+import { ClinicianCards } from "./clinician-cards";
+import { DiagnosisDisclaimer } from "./diagnosis-disclaimer";
+import { EducationalSection } from "./educational-section";
+import { EvidenceSection } from "./evidence-section";
+import { FinalCta } from "./final-cta";
+import { HeroSection } from "./hero-section";
+import { HowItWorks } from "./how-it-works";
+import { LandingFooter } from "./landing-footer";
+import { LandingNav } from "./landing-nav";
+import { PdfReportSection } from "./pdf-report-section";
+import { PrivacySection } from "./privacy-section";
+import { ResultsPreview } from "./results-preview";
+import { ScreeningPreview } from "./screening-preview";
+import { TrustBadges } from "./trust-badges";
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
-
-const fadeUp = {
-	hidden: { opacity: 0, y: 16 },
-	visible: (i: number) => ({
-		opacity: 1,
-		y: 0,
-		transition: { delay: i * 0.08, duration: 0.35, ease: EASE },
-	}),
-};
-
-const localeLabels: Record<string, string> = {
-	en: "EN",
-	"pt-BR": "PT",
-	es: "ES",
-};
-
-interface Props {
-	screening: string;
-	tagline: string;
-	description: string;
-	cta: string;
-	ctaSecondary: string;
-	disclaimer: string;
-	signInDescription: string;
-	signIn: string;
+export interface LandingProps {
+	locale: string;
+	// Hero
+	heroHeadline: string;
+	heroBody: string;
+	heroImageAlt: string;
+	// Waitlist (shared)
+	waitlistPlaceholder: string;
+	waitlistCta: string;
+	waitlistSuccess: string;
+	waitlistError: string;
+	// Trust
+	trust: [
+		{ label: string; desc: string },
+		{ label: string; desc: string },
+		{ label: string; desc: string },
+		{ label: string; desc: string },
+	];
+	// Educational
+	educationalHeading: string;
+	educationalIntro: string;
+	educationalTopics: [
+		{ title: string; body: string },
+		{ title: string; body: string },
+		{ title: string; body: string },
+	];
+	educationalImageAlt: string;
+	educationalHumanAlt: string;
+	// How it works
+	howItWorksHeading: string;
+	howItWorksSteps: [
+		{ num: string; title: string; body: string },
+		{ num: string; title: string; body: string },
+		{ num: string; title: string; body: string },
+		{ num: string; title: string; body: string },
+	];
+	// Screening preview
+	screeningHeading: string;
+	screeningBadge: string;
+	screeningProgress: string;
+	screeningQuestion: string;
+	screeningOptions: [string, string, string, string, string];
+	// Privacy
+	privacyHeading: string;
+	privacyPillars: [string, string, string];
+	privacyLink: string;
+	// Diagnosis disclaimer
+	disclaimerHeading: string;
+	disclaimerBody: string;
+	screeningLabel: string;
+	screeningDesc: string;
+	diagnosisLabel: string;
+	diagnosisDesc: string;
+	// Results preview
+	resultsHeading: string;
+	resultsBody: string;
+	resultsScore: string;
+	resultsImageAlt: string;
+	resultsCategories: [string, string, string, string];
+	// Evidence
+	evidenceHeading: string;
+	evidenceBody: string;
+	evidenceItems: [
+		{ title: string; body: string },
+		{ title: string; body: string },
+		{ title: string; body: string },
+		{ title: string; body: string },
+	];
+	// PDF
+	pdfHeading: string;
+	pdfBody: string;
+	pdfCta: string;
+	pdfDisclaimer: string;
+	// Clinicians
+	cliniciansHeading: string;
+	cliniciansBody: string;
+	cliniciansImageAlt: string;
+	cliniciansCards: [
+		{ name: string; title: string; location: string; specialty: string },
+		{ name: string; title: string; location: string; specialty: string },
+	];
+	cliniciansOnline: string;
+	cliniciansVerified: string;
+	// Final CTA
+	finalCtaHeading: string;
+	finalCtaBody: string;
+	finalCtaImageAlt: string;
+	// Footer
+	footerTagline: string;
+	footerDisclaimer: string;
+	footerPrivacy: string;
 }
 
-export function LandingClient({
-	screening,
-	tagline,
-	description,
-	cta,
-	ctaSecondary,
-	disclaimer,
-	signInDescription,
-	signIn,
-}: Readonly<Props>) {
-	const pathname = usePathname();
-	const router = useRouter();
-	const currentLocale = useLocale();
-
-	function switchLocale(locale: string) {
-		router.replace(pathname, { locale });
-	}
-
+export function LandingClient(props: Readonly<LandingProps>) {
 	return (
-		<main className="flex flex-col min-h-svh">
-			{/* Nav */}
-			<header className="sticky top-0 z-10 border-b border-auren-border bg-background/80 backdrop-blur-md">
-				<div className="mx-auto max-w-300 px-5 md:px-8 lg:px-12 flex h-16 items-center justify-between">
-					<span className="text-forest font-medium tracking-[-0.03em] text-lg">
-						Auren
-					</span>
-					<div className="flex items-center gap-2">
-						<Globe size={16} className="text-text-muted" />
-						{routing.locales.map((locale) => (
-							<button
-								key={locale}
-								type="button"
-								onClick={() => switchLocale(locale)}
-								className={`text-xs font-medium px-2 py-1 rounded-md transition-colors ${
-									locale === currentLocale
-										? "bg-forest text-white"
-										: "text-text-secondary hover:text-forest"
-								}`}
-							>
-								{localeLabels[locale]}
-							</button>
-						))}
-					</div>
-				</div>
-			</header>
-
-			{/* Hero */}
-			<section className="flex-1 flex items-center justify-center px-5 md:px-8 lg:px-12 py-16 md:py-24">
-				<div className="mx-auto max-w-170 flex flex-col items-center text-center gap-8">
-					<motion.div
-						custom={0}
-						variants={fadeUp}
-						initial="hidden"
-						animate="visible"
-						className="relative w-16 h-16"
-					>
-						<div className="absolute inset-0 rounded-full bg-sage opacity-40" />
-						<div className="absolute inset-0 translate-x-4 translate-y-2 rounded-full bg-sage-light opacity-30" />
-					</motion.div>
-
-					<motion.div
-						custom={1}
-						variants={fadeUp}
-						initial="hidden"
-						animate="visible"
-					>
-						<Badge
-							variant="secondary"
-							className="bg-surface-muted text-forest-light border-none text-xs tracking-[0.04em] uppercase"
-						>
-							{screening}
-						</Badge>
-					</motion.div>
-
-					<motion.h1
-						custom={2}
-						variants={fadeUp}
-						initial="hidden"
-						animate="visible"
-						className="text-[40px] leading-[1.05] tracking-[-0.04em] text-text-primary font-normal"
-					>
-						{tagline}
-					</motion.h1>
-
-					<motion.p
-						custom={3}
-						variants={fadeUp}
-						initial="hidden"
-						animate="visible"
-						className="text-base leading-[1.55] text-text-secondary max-w-120"
-					>
-						{description}
-					</motion.p>
-
-					<motion.div
-						custom={4}
-						variants={fadeUp}
-						initial="hidden"
-						animate="visible"
-						className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto"
-					>
-						<Button
-							size="lg"
-							className="h-14 px-8 bg-forest text-white hover:bg-forest-light rounded-[12px] font-medium text-base gap-2"
-						>
-							{cta}
-							<ArrowRight size={18} />
-						</Button>
-						<Button
-							size="lg"
-							variant="secondary"
-							className="h-14 px-8 bg-secondary text-forest hover:bg-mist rounded-[12px] font-medium text-base"
-						>
-							{ctaSecondary}
-						</Button>
-					</motion.div>
-
-					<motion.p
-						custom={5}
-						variants={fadeUp}
-						initial="hidden"
-						animate="visible"
-						className="text-xs text-text-muted leading-[1.4] tracking-[0.04em]"
-					>
-						{disclaimer}
-					</motion.p>
-				</div>
-			</section>
-
-			{/* Sign in CTA */}
-			<section className="border-t border-auren-border px-5 py-8 text-center">
-				<p className="text-sm text-text-secondary mb-4">{signInDescription}</p>
-				<form action={handleGoogleSignIn}>
-					<input type="hidden" name="locale" value={currentLocale} />
-					<Button
-						type="submit"
-						variant="outline"
-						className="border-auren-border text-forest hover:bg-surface-muted rounded-[12px]"
-					>
-						{signIn}
-					</Button>
-				</form>
-			</section>
+		<main>
+			<LandingNav />
+			<HeroSection
+				locale={props.locale}
+				headline={props.heroHeadline}
+				body={props.heroBody}
+				waitlistPlaceholder={props.waitlistPlaceholder}
+				waitlistCta={props.waitlistCta}
+				waitlistSuccess={props.waitlistSuccess}
+				waitlistError={props.waitlistError}
+				heroImageAlt={props.heroImageAlt}
+			/>
+			<TrustBadges items={props.trust} />
+			<EducationalSection
+				heading={props.educationalHeading}
+				intro={props.educationalIntro}
+				topics={props.educationalTopics}
+				editorialImageAlt={props.educationalImageAlt}
+				humanImageAlt={props.educationalHumanAlt}
+			/>
+			<HowItWorks
+				heading={props.howItWorksHeading}
+				steps={props.howItWorksSteps}
+			/>
+			<ScreeningPreview
+				heading={props.screeningHeading}
+				badge={props.screeningBadge}
+				progress={props.screeningProgress}
+				question={props.screeningQuestion}
+				options={props.screeningOptions}
+			/>
+			<PrivacySection
+				heading={props.privacyHeading}
+				pillars={props.privacyPillars}
+				privacyLink={props.privacyLink}
+			/>
+			<DiagnosisDisclaimer
+				heading={props.disclaimerHeading}
+				body={props.disclaimerBody}
+				screeningLabel={props.screeningLabel}
+				screeningDesc={props.screeningDesc}
+				diagnosisLabel={props.diagnosisLabel}
+				diagnosisDesc={props.diagnosisDesc}
+			/>
+			<ResultsPreview
+				heading={props.resultsHeading}
+				body={props.resultsBody}
+				score={props.resultsScore}
+				imageAlt={props.resultsImageAlt}
+				categories={props.resultsCategories}
+			/>
+			<EvidenceSection
+				heading={props.evidenceHeading}
+				body={props.evidenceBody}
+				items={props.evidenceItems}
+			/>
+			<PdfReportSection
+				heading={props.pdfHeading}
+				body={props.pdfBody}
+				cta={props.pdfCta}
+				disclaimer={props.pdfDisclaimer}
+			/>
+			<ClinicianCards
+				heading={props.cliniciansHeading}
+				body={props.cliniciansBody}
+				imageAlt={props.cliniciansImageAlt}
+				cards={props.cliniciansCards}
+				onlineLabel={props.cliniciansOnline}
+				verifiedLabel={props.cliniciansVerified}
+			/>
+			<FinalCta
+				locale={props.locale}
+				heading={props.finalCtaHeading}
+				body={props.finalCtaBody}
+				waitlistPlaceholder={props.waitlistPlaceholder}
+				waitlistCta={props.waitlistCta}
+				waitlistSuccess={props.waitlistSuccess}
+				waitlistError={props.waitlistError}
+				imageAlt={props.finalCtaImageAlt}
+			/>
+			<LandingFooter
+				tagline={props.footerTagline}
+				disclaimer={props.footerDisclaimer}
+				privacyLink={props.footerPrivacy}
+			/>
 		</main>
 	);
 }

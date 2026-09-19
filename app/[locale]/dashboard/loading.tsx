@@ -1,5 +1,5 @@
-import { DashboardSkeleton } from "./_components/page-skeleton";
+import { PageSkeleton } from "./_components/page-skeleton";
 
 export default function Loading() {
-	return <DashboardSkeleton />;
+	return <PageSkeleton variant="dashboard" />;
 }

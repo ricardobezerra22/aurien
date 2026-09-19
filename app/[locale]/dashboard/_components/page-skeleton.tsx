@@ -4,22 +4,23 @@ function Skeleton({ className }: { className?: string }) {
 	return <div className={cn("animate-pulse rounded-md bg-muted", className)} />;
 }
 
-export function DashboardSkeleton() {
-	return (
-		<div className="space-y-6">
-			<div className="space-y-2">
-				<Skeleton className="h-8 w-48" />
-				<Skeleton className="h-4 w-72" />
-			</div>
-			<div className="grid gap-4 sm:grid-cols-2">
-				<Skeleton className="h-36 rounded-xl" />
-				<Skeleton className="h-36 rounded-xl" />
-			</div>
-		</div>
-	);
-}
+type Variant = "dashboard" | "settings";
 
-export function SettingsSkeleton() {
+export function PageSkeleton({ variant }: { variant: Variant }) {
+	if (variant === "dashboard") {
+		return (
+			<div className="space-y-6">
+				<div className="space-y-2">
+					<Skeleton className="h-8 w-48" />
+					<Skeleton className="h-4 w-72" />
+				</div>
+				<div className="grid gap-4 sm:grid-cols-2">
+					<Skeleton className="h-36 rounded-xl" />
+					<Skeleton className="h-36 rounded-xl" />
+				</div>
+			</div>
+		);
+	}
 	return (
 		<div className="space-y-6 max-w-lg">
 			<div className="space-y-2">

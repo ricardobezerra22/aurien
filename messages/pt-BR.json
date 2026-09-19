@@ -21,7 +21,170 @@
 		"description": "Uma ponte calma e baseada em evidências entre o autoconhecimento e o suporte profissional.",
 		"cta": "Iniciar a triagem",
 		"ctaSecondary": "Saiba como funciona",
-		"disclaimer": "Triagem não é diagnóstico. Os resultados são baseados em informações autorrelatadas."
+		"disclaimer": "Triagem não é diagnóstico. Os resultados são baseados em informações autorrelatadas.",
+		"hero": {
+			"headline": "Suas experiências podem estar relacionadas ao autismo?",
+			"body": "Explore características autistas comuns por meio de um questionário de triagem estruturado, desenvolvido para adultos. Seus resultados podem ajudá-lo a decidir se vale a pena discutir uma avaliação profissional.",
+			"ctaPrimary": "Entrar na lista de espera",
+			"ctaSecondary": "Saiba como funciona"
+		},
+		"waitlist": {
+			"placeholder": "seu@email.com",
+			"cta": "Entrar na lista de espera",
+			"success": "Você está na lista. Entraremos em contato em breve.",
+			"errorGeneric": "Algo deu errado. Por favor, tente novamente."
+		},
+		"trust": {
+			"private": {
+				"label": "Privacidade por design",
+				"desc": "Suas respostas são usadas apenas para calcular seu resultado."
+			},
+			"adult": {
+				"label": "Foco em adultos",
+				"desc": "Desenvolvido para adultos, não adaptado de ferramentas infantis."
+			},
+			"evidence": {
+				"label": "Baseado em evidências",
+				"desc": "Com base em instrumentos de triagem validados."
+			},
+			"shareable": {
+				"label": "Resultados compartilháveis",
+				"desc": "Exporte um relatório em PDF para compartilhar com um clínico."
+			}
+		},
+		"educational": {
+			"heading": "Entendendo o autismo em adultos",
+			"intro": "O autismo pode se manifestar de formas muito diferentes em cada pessoa. Alguns adultos só começam a explorar essa possibilidade mais tarde na vida.",
+			"sensory": {
+				"title": "Experiências sensoriais",
+				"body": "Alguns adultos autistas relatam hipersensibilidade ou hipossensibilidade a sons, luz, textura ou outros estímulos sensoriais."
+			},
+			"executive": {
+				"title": "Foco e rotinas",
+				"body": "Alguns adultos autistas descrevem padrões intensos de foco, preferência por previsibilidade ou dificuldade com mudanças inesperadas na rotina."
+			},
+			"social": {
+				"title": "Comunicação social",
+				"body": "Alguns adultos autistas vivenciam diferenças na comunicação social — não déficits, mas diferenças na forma como a conexão, a conversa e o contexto são percebidos."
+			},
+			"imageAlt": "Ilustração editorial abstrata representando experiências sensoriais, rotinas e foco através de círculos sobrepostos",
+			"humanAlt": "Dois adultos tendo uma conversa calma e reflexiva em uma cafeteria"
+		},
+		"howItWorks": {
+			"heading": "Como funciona",
+			"step1": {
+				"num": "01",
+				"title": "Explorar",
+				"body": "Saiba o que a triagem foi projetada para explorar e o que ela não pode dizer."
+			},
+			"step2": {
+				"num": "02",
+				"title": "Responder",
+				"body": "Complete um questionário estruturado no seu próprio ritmo. Uma pergunta de cada vez."
+			},
+			"step3": {
+				"num": "03",
+				"title": "Compreender",
+				"body": "Revise seus resultados de triagem e as evidências por trás de cada resposta."
+			},
+			"step4": {
+				"num": "04",
+				"title": "Decidir",
+				"body": "Escolha se discutir os resultados com um profissional qualificado faz sentido para você."
+			}
+		},
+		"screeningPreview": {
+			"heading": "Projetado para reduzir a carga cognitiva",
+			"badge": "Prévia",
+			"progress": "Pergunta 8 de 32",
+			"question": "Você acha difícil lidar com mudanças inesperadas na rotina?",
+			"opt1": "Nunca",
+			"opt2": "Raramente",
+			"opt3": "Às vezes",
+			"opt4": "Frequentemente",
+			"opt5": "Sempre"
+		},
+		"privacy": {
+			"heading": "Suas respostas são suas.",
+			"pillar1": "Suas respostas são usadas apenas para calcular seu resultado de triagem.",
+			"pillar2": "Você decide se deseja gerar ou compartilhar um relatório.",
+			"pillar3": "Coletamos apenas o necessário.",
+			"link": "Leia nossa política de privacidade"
+		},
+		"diagnosisDisclaimer": {
+			"heading": "Triagem não é diagnóstico.",
+			"body": "Um questionário de triagem pode identificar padrões que merecem ser explorados. Ele não pode determinar se alguém é autista nem substituir uma avaliação clínica.",
+			"screeningLabel": "Triagem",
+			"screeningDesc": "Identifica padrões que podem justificar uma exploração mais aprofundada com um profissional.",
+			"diagnosisLabel": "Diagnóstico clínico",
+			"diagnosisDesc": "Requer uma avaliação abrangente por um profissional qualificado."
+		},
+		"resultsPreview": {
+			"heading": "Entenda o que suas respostas sugerem.",
+			"body": "Seu resultado é claro e contextualizado — mostrando o que suas respostas indicaram em diferentes dimensões e o que isso pode ou não significar.",
+			"score": "Suas respostas indicam algumas características que podem valer a pena discutir com um profissional.",
+			"imageAlt": "Padrão estruturado abstrato representando dados de triagem organizados",
+			"cat1": "Processamento sensorial",
+			"cat2": "Comunicação social",
+			"cat3": "Função executiva",
+			"cat4": "Padrões repetitivos"
+		},
+		"evidence": {
+			"heading": "Entenda como seu resultado foi obtido.",
+			"body": "Seu resultado não é uma caixa-preta. Explore cada dimensão medida pelo questionário e como suas respostas contribuíram.",
+			"item1": {
+				"title": "Processamento sensorial",
+				"body": "Como você experimenta informações sensoriais, incluindo hiper ou hipossensibilidade a estímulos."
+			},
+			"item2": {
+				"title": "Comunicação social",
+				"body": "Padrões em como você vivencia a interação social, sinais não-verbais e conversas."
+			},
+			"item3": {
+				"title": "Função executiva",
+				"body": "Como você planeja, organiza, muda de tarefas e gerencia rotinas e transições."
+			},
+			"item4": {
+				"title": "Comportamentos repetitivos",
+				"body": "A presença de interesses focados, rotinas ou padrões repetitivos que fornecem conforto ou estrutura."
+			}
+		},
+		"pdf": {
+			"heading": "Leve seus resultados com você.",
+			"body": "Gere um relatório de triagem profissional para compartilhar com um clínico, terapeuta ou médico. O relatório inclui suas respostas, pontuações e limitações importantes.",
+			"cta": "Entre para gerar seu relatório",
+			"disclaimer": "Este é um relatório de triagem, não um documento diagnóstico."
+		},
+		"clinicians": {
+			"heading": "Quer explorar isso mais a fundo?",
+			"body": "Após completar uma triagem, você pode escolher discutir seus resultados com um profissional qualificado. A Auren ajuda você a encontrar a pessoa certa.",
+			"imageAlt": "Um profissional e um cliente em uma consulta calma e reflexiva",
+			"card1": {
+				"name": "Dra. Sarah Chen",
+				"title": "Psicóloga Clínica",
+				"location": "Londres, Reino Unido",
+				"specialty": "Avaliação de autismo em adultos"
+			},
+			"card2": {
+				"name": "Dr. Marco Alves",
+				"title": "Neuropsicólogo",
+				"location": "São Paulo, Brasil",
+				"specialty": "Condições do neurodesenvolvimento"
+			},
+			"online": "Online",
+			"inPerson": "Presencial",
+			"verified": "Verificado"
+		},
+		"finalCta": {
+			"heading": "Comece a explorar suas experiências.",
+			"body": "Entre na lista de espera e seja um dos primeiros a acessar a Auren quando ela for lançada.",
+			"imageAlt": "Círculos sobrepostos abstratos em floresta e sálvia representando clareza através do autoconhecimento"
+		},
+		"footer": {
+			"tagline": "Mais clareza. Melhores decisões.",
+			"disclaimer": "A Auren é uma ferramenta de triagem, não um serviço de diagnóstico. Os resultados não devem substituir uma avaliação clínica profissional.",
+			"privacy": "Política de privacidade"
+		}
 	},
 	"questionnaire": {
 		"progress": "{current} de {total}",
