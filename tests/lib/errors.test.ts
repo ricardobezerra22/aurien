@@ -5,9 +5,9 @@ import {
 	ForbiddenError,
 	HttpStatus,
 	NotFoundError,
+	toErrorResponse,
 	UnauthorizedError,
 	ValidationError,
-	toErrorResponse,
 } from "@/lib/errors";
 
 describe("HttpStatus", () => {

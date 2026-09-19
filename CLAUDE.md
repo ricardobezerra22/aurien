@@ -7,11 +7,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Rules
 
 - **Never create git commits.** Do not run `git commit`, `git push`, or any destructive git commands. Stage and diff are fine; committing is the user's responsibility.
-- **After every feature, run lint then tests before reporting done:**
-  ```bash
-  yarn lint && yarn test:coverage
-  ```
-  Coverage must pass at ≥80% across `lib/**`, `app/api/**`, and `components/**`. If it doesn't, write the missing tests before finishing.
+- **After every feature, write unit tests for all functions with ≥80% minimum coverage:**
+  1. Write unit tests for every function created or modified in the feature
+  2. Run `yarn lint && yarn test:coverage` to verify coverage
+  3. Coverage must pass at ≥80% across `lib/**`, `app/api/**`, and `components/**`
+  4. If coverage falls short, write the missing tests before marking work done
+  
+  This applies to all functions in `lib/`, API routes in `app/api/`, and components in `components/`. Do not skip this step—it is a requirement before reporting feature completion.
 
 ### SOLID & clean architecture
 
@@ -53,6 +55,82 @@ yarn docker:dev:down      # stop and remove containers
 # staging / production
 docker compose -f infra/dev/docker-compose.yml up --build
 docker compose -f infra/prd/docker-compose.yml up --build
+```
+
+## Next.js App Router — Server & Client Architecture
+
+### Core principle
+
+Use **Server Components by default**. Introduce Client Components only when browser-side interactivity is actually required.
+
+> Ask: "Does this code need to run in the browser?"
+>
+> * No → Server Component
+> * Yes → Client Component
+
+### Server Components
+
+Use Server Components for:
+
+* Data fetching
+* Database access
+* Prisma queries
+* Authentication and authorization
+* Accessing private environment variables/secrets
+* Initial page rendering
+* Server-side business logic that does not require browser APIs
+* Reducing client-side JavaScript
+
+Example:
+
+```tsx
+export default async function Dashboard() {
+  const user = await getCurrentUser()
+  const projects = await db.project.findMany()
+
+  return (
+    <>
+      <DashboardHeader user={user} />
+      <ProjectList projects={projects} />
+    </>
+  )
+}
+```
+
+Do not add `'use client'` to a page/component unless there is a concrete reason.
+
+### Client Components
+
+Use `'use client'` only when the component requires:
+
+* `useState`
+* `useEffect`
+* `useReducer`
+* `useRef` for browser interaction
+* Event handlers such as `onClick`, `onChange`, etc.
+* Browser APIs such as `window`, `localStorage`, `navigator`
+* Client-side real-time behavior
+* Interactive UI state
+* Libraries that require browser execution
+
+Keep Client Components as small and isolated as possible.
+
+Prefer:
+
+```text
+Dashboard (Server)
+├── Header (Server)
+├── Stats (Server)
+└── InteractiveChart (Client)
+```
+
+over:
+
+```text
+Dashboard (Client)
+├── Header
+├── Stats
+└── InteractiveChart
 ```
 
 ## Architecture

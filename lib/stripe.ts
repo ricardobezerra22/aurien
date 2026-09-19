@@ -4,12 +4,10 @@ import { env } from "./env";
 let _stripe: Stripe | null = null;
 
 export function getStripe(): Stripe {
-  if (!_stripe) {
-    _stripe = new Stripe(env.STRIPE_SECRET_KEY, {
-      apiVersion: "2026-08-26.dahlia",
-    });
-  }
-  return _stripe;
+	_stripe ??= new Stripe(env.STRIPE_SECRET_KEY!, {
+		apiVersion: "2026-08-26.dahlia",
+	});
+	return _stripe;
 }
 
 export { _stripe as stripe };

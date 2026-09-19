@@ -1,49 +1,86 @@
 {
-  "common": {
-    "loading": "Carregando...",
-    "error": "Algo deu errado.",
-    "back": "Voltar",
-    "continue": "Continuar",
-    "cancel": "Cancelar",
-    "save": "Salvar",
-    "signIn": "Entrar",
-    "signOut": "Sair"
-  },
-  "nav": {
-    "home": "Início",
-    "screening": "Triagem",
-    "results": "Resultados",
-    "professionals": "Profissionais",
-    "profile": "Perfil"
-  },
-  "landing": {
-    "tagline": "Mais clareza. Melhores decisões.",
-    "description": "Uma ponte calma e baseada em evidências entre o autoconhecimento e o suporte profissional.",
-    "cta": "Iniciar a triagem",
-    "ctaSecondary": "Saiba como funciona",
-    "disclaimer": "Triagem não é diagnóstico. Os resultados são baseados em informações autorrelatadas."
-  },
-  "questionnaire": {
-    "progress": "{current} de {total}",
-    "help": "Ajuda",
-    "back": "Voltar",
-    "continue": "Continuar"
-  },
-  "results": {
-    "score": "Sua pontuação de triagem",
-    "disclaimer": "Isto não é um diagnóstico clínico. Um profissional de saúde qualificado deve interpretar estes resultados.",
-    "nextSteps": "Próximos passos"
-  },
-  "errors": {
-    "notFoundTitle": "Página não encontrada",
-    "notFoundDescription": "A página que você procura não existe ou foi movida.",
-    "errorTitle": "Algo deu errado",
-    "errorDescription": "Ocorreu um erro inesperado. Você pode tentar novamente ou voltar.",
-    "retry": "Tentar novamente",
-    "goHome": "Ir para o início"
-  },
-  "auth": {
-    "signInWithGoogle": "Entrar com Google",
-    "signInDescription": "Entre para salvar seus resultados e se conectar com profissionais."
-  }
+	"common": {
+		"loading": "Carregando...",
+		"error": "Algo deu errado.",
+		"back": "Voltar",
+		"continue": "Continuar",
+		"cancel": "Cancelar",
+		"save": "Salvar",
+		"signIn": "Entrar",
+		"signOut": "Sair"
+	},
+	"nav": {
+		"home": "Início",
+		"screening": "Triagem",
+		"results": "Resultados",
+		"professionals": "Profissionais",
+		"profile": "Perfil"
+	},
+	"landing": {
+		"tagline": "Mais clareza. Melhores decisões.",
+		"description": "Uma ponte calma e baseada em evidências entre o autoconhecimento e o suporte profissional.",
+		"cta": "Iniciar a triagem",
+		"ctaSecondary": "Saiba como funciona",
+		"disclaimer": "Triagem não é diagnóstico. Os resultados são baseados em informações autorrelatadas."
+	},
+	"questionnaire": {
+		"progress": "{current} de {total}",
+		"help": "Ajuda",
+		"back": "Voltar",
+		"continue": "Continuar"
+	},
+	"results": {
+		"score": "Sua pontuação de triagem",
+		"disclaimer": "Isto não é um diagnóstico clínico. Um profissional de saúde qualificado deve interpretar estes resultados.",
+		"nextSteps": "Próximos passos"
+	},
+	"errors": {
+		"notFoundTitle": "Página não encontrada",
+		"notFoundDescription": "A página que você procura não existe ou foi movida.",
+		"errorTitle": "Algo deu errado",
+		"errorDescription": "Ocorreu um erro inesperado. Você pode tentar novamente ou voltar.",
+		"retry": "Tentar novamente",
+		"goHome": "Ir para o início"
+	},
+	"auth": {
+		"signInWithGoogle": "Entrar com Google",
+		"signInDescription": "Entre para salvar seus resultados e se conectar com profissionais."
+	},
+	"dashboard": {
+		"title": "Painel",
+		"welcomeMorning": "Bom dia, {name}",
+		"welcomeAfternoon": "Boa tarde, {name}",
+		"welcomeEvening": "Boa noite, {name}",
+		"subscription": {
+			"title": "Seu plano",
+			"free": "Plano gratuito",
+			"active": "Ativo",
+			"cancelled": "Cancelado",
+			"upgradeHint": "Faça upgrade para acessar todos os recursos."
+		}
+	},
+	"settings": {
+		"title": "Configurações",
+		"profile": "Perfil",
+		"appearance": "Aparência",
+		"account": "Conta",
+		"profileTitle": "Perfil",
+		"profileSubtitle": "Suas informações de conta do Google.",
+		"name": "Nome",
+		"email": "E-mail",
+		"managedByGoogle": "Seu perfil é gerenciado pelo Google.",
+		"appearanceTitle": "Aparência",
+		"appearanceSubtitle": "Escolha como o Auren aparece para você.",
+		"theme": {
+			"label": "Tema",
+			"light": "Claro",
+			"dark": "Escuro",
+			"system": "Sistema"
+		},
+		"accountTitle": "Conta",
+		"accountSubtitle": "Gerencie as configurações da sua conta.",
+		"dangerZone": "Zona de perigo",
+		"signOutAll": "Sair",
+		"signOutAllHint": "Você será redirecionado para a página inicial."
+	}
 }

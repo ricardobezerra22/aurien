@@ -56,17 +56,53 @@
   --spacing-page-desktop: 48px;
 }
 
+/*
+  Runtime CSS vars for values not present in @theme above.
+  Referenced by @theme inline via var() so .dark can override them at runtime.
+  @theme inline with var() preserves the reference in generated utilities;
+  @theme inline with a literal inlines the value (dark overrides won't work).
+*/
+:root {
+  --auren-bg:         #F7F6F2;
+  --auren-primary-fg: #FFFFFF;
+  --auren-secondary:  #E9EEEA;
+  --auren-input:      #CDD5D0;
+}
+
+/* ── Dark mode ── */
+.dark {
+  color-scheme: dark;
+
+  /* Runtime vars: override @theme inline literals */
+  --auren-bg:         #0F1A17;
+  --auren-primary-fg: #0F1A17;
+  --auren-secondary:  #1E302A;
+  --auren-input:      #2F3D39;
+
+  /* Raw @theme tokens: override values used directly via var() in generated CSS */
+  --color-surface:        #172522;
+  --color-surface-muted:  #1E302A;
+  --color-text-primary:   #EFF1EC;
+  --color-text-secondary: #89938F;
+  --color-text-muted:     #5D6A66;
+  --color-auren-border:   #2F3D39;
+  --color-forest:         #7E9B91;
+  --color-forest-light:   #AEBDB4;
+  --color-auren-error:    #C47070;
+  --color-auren-success:  #7E9B91;
+}
+
 /* ── Map Auren → shadcn semantic tokens ── */
 @theme inline {
-  --color-background:          #F7F6F2;
+  --color-background:          var(--auren-bg);
   --color-foreground:          var(--color-text-primary);
   --color-card:                var(--color-surface);
   --color-card-foreground:     var(--color-text-primary);
   --color-popover:             var(--color-surface);
   --color-popover-foreground:  var(--color-text-primary);
   --color-primary:             var(--color-forest);
-  --color-primary-foreground:  #FFFFFF;
-  --color-secondary:           #E9EEEA;
+  --color-primary-foreground:  var(--auren-primary-fg);
+  --color-secondary:           var(--auren-secondary);
   --color-secondary-foreground:var(--color-forest);
   --color-muted:               var(--color-surface-muted);
   --color-muted-foreground:    var(--color-text-secondary);
@@ -74,7 +110,7 @@
   --color-accent-foreground:   var(--color-forest);
   --color-destructive:         var(--color-auren-error);
   --color-border:              var(--color-auren-border);
-  --color-input:               #CDD5D0;
+  --color-input:               var(--auren-input);
   --color-ring:                var(--color-auren-success);
   --font-sans:                 var(--font-sans);
   --font-mono:                 var(--font-geist-mono);
