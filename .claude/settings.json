@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Glob(**)",
+      "Grep(**)",
+      "Edit(**)",
+      "Write(**)",
+      "Task",
+      "Bash(yarn lint)",
+      "Bash(yarn lint:fix)",
+      "Bash(yarn test)",
+      "Bash(yarn test:*)",
+      "Bash(yarn vitest:*)",
+      "Bash(git diff:*)",
+      "Bash(git status)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git merge:*)",
+      "Bash(git rebase:*)",
+      "Bash(git reset:*)"
+    ]
+  },
+  "env": {
+    "CLAUDE_CODE_DISABLE_COAUTHOR_TRAILER": "1"
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/post-write-check.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,26 +1,96 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+/* ── Auren design tokens ── */
+@theme {
+  /* Brand colors */
+  --color-forest:        #173B36;
+  --color-forest-light:  #2F5A52;
+  --color-sage:          #7E9B91;
+  --color-sage-light:    #AEBDB4;
+
+  /* Secondary */
+  --color-mist:          #DCE4DE;
+  --color-lavender:      #B8ADD5;
+  --color-sand:          #D8D2C4;
+
+  /* Neutral */
+  --color-surface:       #FFFFFF;
+  --color-surface-muted: #EFF1EC;
+  --color-auren-border:  #DDE1DA;
+  --color-text-primary:  #172522;
+  --color-text-secondary:#5D6A66;
+  --color-text-muted:    #89938F;
+
+  /* Semantic */
+  --color-auren-success: #527A68;
+  --color-auren-warning: #9A8151;
+  --color-auren-error:   #A65D5D;
+  --color-auren-info:    #607C85;
+
+  /* Radius */
+  --radius-card:  16px;
+  --radius-pill:  999px;
+  --radius-input: 12px;
+
+  /* Shadows */
+  --shadow-subtle:  0 1px 3px rgba(23, 37, 34, 0.06);
+  --shadow-card:    0 4px 20px rgba(23, 37, 34, 0.06);
+  --shadow-elevated:0 12px 40px rgba(23, 37, 34, 0.10);
+
+  /* Motion */
+  --ease-auren: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast:   120ms;
+  --duration-normal: 200ms;
+  --duration-slow:   350ms;
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Spacing extras */
+  --spacing-page-mobile:  20px;
+  --spacing-page-tablet:  32px;
+  --spacing-page-desktop: 48px;
 }
 
+/* ── Map Auren → shadcn semantic tokens ── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background:          #F7F6F2;
+  --color-foreground:          var(--color-text-primary);
+  --color-card:                var(--color-surface);
+  --color-card-foreground:     var(--color-text-primary);
+  --color-popover:             var(--color-surface);
+  --color-popover-foreground:  var(--color-text-primary);
+  --color-primary:             var(--color-forest);
+  --color-primary-foreground:  #FFFFFF;
+  --color-secondary:           #E9EEEA;
+  --color-secondary-foreground:var(--color-forest);
+  --color-muted:               var(--color-surface-muted);
+  --color-muted-foreground:    var(--color-text-secondary);
+  --color-accent:              var(--color-surface-muted);
+  --color-accent-foreground:   var(--color-forest);
+  --color-destructive:         var(--color-auren-error);
+  --color-border:              var(--color-auren-border);
+  --color-input:               #CDD5D0;
+  --color-ring:                var(--color-auren-success);
+  --font-sans:                 var(--font-sans);
+  --font-mono:                 var(--font-geist-mono);
+  --font-heading:              var(--font-sans);
+  --radius-sm:                 8px;
+  --radius-md:                 12px;
+  --radius-lg:                 16px;
+  --radius-xl:                 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
 }

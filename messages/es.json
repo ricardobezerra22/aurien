@@ -1,0 +1,49 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal.",
+    "back": "Atrás",
+    "continue": "Continuar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "signIn": "Iniciar sesión",
+    "signOut": "Cerrar sesión"
+  },
+  "nav": {
+    "home": "Inicio",
+    "screening": "Evaluación",
+    "results": "Resultados",
+    "professionals": "Profesionales",
+    "profile": "Perfil"
+  },
+  "landing": {
+    "tagline": "Más claridad. Mejores decisiones.",
+    "description": "Un puente tranquilo y basado en evidencia entre el autodescubrimiento y el apoyo profesional.",
+    "cta": "Iniciar la evaluación",
+    "ctaSecondary": "Cómo funciona",
+    "disclaimer": "La evaluación no es un diagnóstico. Los resultados se basan en información autoinformada."
+  },
+  "questionnaire": {
+    "progress": "{current} de {total}",
+    "help": "Ayuda",
+    "back": "Atrás",
+    "continue": "Continuar"
+  },
+  "results": {
+    "score": "Tu puntuación de evaluación",
+    "disclaimer": "Esto no es un diagnóstico clínico. Un profesional de la salud calificado debe interpretar estos resultados.",
+    "nextSteps": "Próximos pasos"
+  },
+  "errors": {
+    "notFoundTitle": "Página no encontrada",
+    "notFoundDescription": "La página que buscas no existe o fue movida.",
+    "errorTitle": "Algo salió mal",
+    "errorDescription": "Ocurrió un error inesperado. Puedes intentarlo de nuevo o volver.",
+    "retry": "Intentar de nuevo",
+    "goHome": "Ir al inicio"
+  },
+  "auth": {
+    "signInWithGoogle": "Iniciar sesión con Google",
+    "signInDescription": "Inicia sesión para guardar tus resultados y conectarte con profesionales."
+  }
+}

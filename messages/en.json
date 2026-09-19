@@ -1,0 +1,49 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong.",
+    "back": "Back",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "save": "Save",
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "nav": {
+    "home": "Home",
+    "screening": "Screening",
+    "results": "Results",
+    "professionals": "Professionals",
+    "profile": "Profile"
+  },
+  "landing": {
+    "tagline": "More clarity. Better decisions.",
+    "description": "A calm, evidence-informed bridge between self-discovery and professional support.",
+    "cta": "Start the screening",
+    "ctaSecondary": "Learn how it works",
+    "disclaimer": "Screening is not a diagnosis. Results are based on self-reported information."
+  },
+  "questionnaire": {
+    "progress": "{current} of {total}",
+    "help": "Help",
+    "back": "Back",
+    "continue": "Continue"
+  },
+  "results": {
+    "score": "Your screening score",
+    "disclaimer": "This is not a clinical diagnosis. A qualified healthcare professional should interpret these results.",
+    "nextSteps": "Next steps"
+  },
+  "errors": {
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page you're looking for doesn't exist or has been moved.",
+    "errorTitle": "Something went wrong",
+    "errorDescription": "An unexpected error occurred. You can try again or go back.",
+    "retry": "Try again",
+    "goHome": "Go home"
+  },
+  "auth": {
+    "signInWithGoogle": "Sign in with Google",
+    "signInDescription": "Sign in to save your results and connect with professionals."
+  }
+}
