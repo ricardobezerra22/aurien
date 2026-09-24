@@ -26,7 +26,7 @@ export function FinalCta({
 	return (
 		<section
 			id="waitlist"
-			className="relative py-24 md:py-32 overflow-hidden bg-[#0F1A17]"
+			className="relative py-28 md:py-36 overflow-hidden bg-[#0F1A17]"
 		>
 			{/* Background image */}
 			<div className="absolute inset-0" aria-hidden="true">
@@ -35,17 +35,27 @@ export function FinalCta({
 					alt={imageAlt}
 					fill
 					sizes="100vw"
-					className="object-cover object-center opacity-20"
+					className="object-cover object-center opacity-30"
 				/>
-				<div className="absolute inset-0 bg-gradient-to-b from-[#0F1A17]/60 to-[#0F1A17]/80" />
+				<div className="absolute inset-0 bg-gradient-to-b from-[#0F1A17]/50 via-transparent to-[#0F1A17]/70" />
 			</div>
 
 			<div className="relative mx-auto max-w-300 px-5 md:px-8 lg:px-12 text-center">
 				<Reveal>
-					<h2 className="text-[clamp(2rem,4vw,3rem)] leading-[1.05] tracking-[-0.04em] text-white font-normal mb-4">
+					<div className="flex items-center justify-center gap-3 mb-8">
+						<div className="w-5 h-px bg-white/25" />
+						<span className="text-[0.6875rem] tracking-[0.1em] uppercase text-sage-light font-medium">
+							Early access
+						</span>
+						<div className="w-5 h-px bg-white/25" />
+					</div>
+					<h2
+						className="text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.04] tracking-[-0.04em] text-white font-normal mb-5 max-w-2xl mx-auto"
+						style={{ fontFamily: "var(--font-fraunces, serif)" }}
+					>
 						{heading}
 					</h2>
-					<p className="text-base md:text-lg text-white/70 leading-[1.6] mb-10 max-w-lg mx-auto">
+					<p className="text-base md:text-lg text-white/60 leading-[1.65] mb-10 max-w-lg mx-auto">
 						{body}
 					</p>
 				</Reveal>

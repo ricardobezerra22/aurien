@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { brand } from "../brand.config";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,10 +10,16 @@ const inter = Inter({
 	display: "swap",
 });
 
+const fraunces = Fraunces({
+	subsets: ["latin"],
+	variable: "--font-fraunces",
+	display: "swap",
+	axes: ["SOFT", "WONK"],
+});
+
 export const metadata: Metadata = {
-	title: "Auren — More clarity. Better decisions.",
-	description:
-		"A calm, evidence-informed bridge between self-discovery and professional support.",
+	title: `${brand.meta.name} — ${brand.meta.tagline}`,
+	description: brand.meta.description,
 };
 
 export default function RootLayout({
@@ -21,7 +28,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html className={`${inter.variable} h-full`} suppressHydrationWarning>
+		<html
+			className={`${inter.variable} ${fraunces.variable} h-full`}
+			suppressHydrationWarning
+		>
 			<body className="min-h-full flex flex-col bg-background text-foreground antialiased">
 				<ThemeProvider>{children}</ThemeProvider>
 			</body>

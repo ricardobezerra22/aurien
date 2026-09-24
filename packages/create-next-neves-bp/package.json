@@ -1,0 +1,13 @@
+{
+  "name": "create-next-neves-bp",
+  "version": "0.1.0",
+  "description": "Scaffold a next-neves-bp project with your brand",
+  "type": "module",
+  "bin": {
+    "create-next-neves-bp": "./index.mjs"
+  },
+  "files": ["index.mjs"],
+  "engines": { "node": ">=20" },
+  "keywords": ["nextjs", "boilerplate", "scaffold", "create-app"],
+  "license": "MIT"
+}

@@ -1,8 +1,9 @@
 {
-	"name": "auren",
+	"name": "next-neves-bp",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"tokens": "node scripts/generate-tokens.mjs",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",

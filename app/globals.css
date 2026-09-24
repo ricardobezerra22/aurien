@@ -1,60 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "./generated-tokens.css";
 
 @custom-variant dark (&:is(.dark *));
-
-/* ── Auren design tokens ── */
-@theme {
-  /* Brand colors */
-  --color-forest:        #173B36;
-  --color-forest-light:  #2F5A52;
-  --color-sage:          #7E9B91;
-  --color-sage-light:    #AEBDB4;
-
-  /* Secondary */
-  --color-mist:          #DCE4DE;
-  --color-lavender:      #B8ADD5;
-  --color-sand:          #D8D2C4;
-
-  /* Neutral */
-  --color-surface:       #FFFFFF;
-  --color-surface-muted: #EFF1EC;
-  --color-auren-border:  #DDE1DA;
-  --color-text-primary:  #172522;
-  --color-text-secondary:#5D6A66;
-  --color-text-muted:    #89938F;
-
-  /* Semantic */
-  --color-auren-success: #527A68;
-  --color-auren-warning: #9A8151;
-  --color-auren-error:   #A65D5D;
-  --color-auren-info:    #607C85;
-
-  /* Radius */
-  --radius-card:  16px;
-  --radius-pill:  999px;
-  --radius-input: 12px;
-
-  /* Shadows */
-  --shadow-subtle:  0 1px 3px rgba(23, 37, 34, 0.06);
-  --shadow-card:    0 4px 20px rgba(23, 37, 34, 0.06);
-  --shadow-elevated:0 12px 40px rgba(23, 37, 34, 0.10);
-
-  /* Motion */
-  --ease-auren: cubic-bezier(0.22, 1, 0.36, 1);
-  --duration-fast:   120ms;
-  --duration-normal: 200ms;
-  --duration-slow:   350ms;
-
-  /* Typography */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-
-  /* Spacing extras */
-  --spacing-page-mobile:  20px;
-  --spacing-page-tablet:  32px;
-  --spacing-page-desktop: 48px;
-}
 
 /*
   Runtime CSS vars for values not present in @theme above.
@@ -62,37 +11,8 @@
   @theme inline with var() preserves the reference in generated utilities;
   @theme inline with a literal inlines the value (dark overrides won't work).
 */
-:root {
-  --auren-bg:         #F7F6F2;
-  --auren-primary-fg: #FFFFFF;
-  --auren-secondary:  #E9EEEA;
-  --auren-input:      #CDD5D0;
-}
 
-/* ── Dark mode ── */
-.dark {
-  color-scheme: dark;
-
-  /* Runtime vars: override @theme inline literals */
-  --auren-bg:         #0F1A17;
-  --auren-primary-fg: #0F1A17;
-  --auren-secondary:  #1E302A;
-  --auren-input:      #2F3D39;
-
-  /* Raw @theme tokens: override values used directly via var() in generated CSS */
-  --color-surface:        #172522;
-  --color-surface-muted:  #1E302A;
-  --color-text-primary:   #EFF1EC;
-  --color-text-secondary: #89938F;
-  --color-text-muted:     #5D6A66;
-  --color-auren-border:   #2F3D39;
-  --color-forest:         #7E9B91;
-  --color-forest-light:   #AEBDB4;
-  --color-auren-error:    #C47070;
-  --color-auren-success:  #7E9B91;
-}
-
-/* ── Map Auren → shadcn semantic tokens ── */
+/* ── Map brand tokens → shadcn semantic tokens ── */
 @theme inline {
   --color-background:          var(--auren-bg);
   --color-foreground:          var(--color-text-primary);

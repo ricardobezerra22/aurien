@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "name": "Auren",
+    "tagline": "More clarity. Better decisions.",
+    "description": "A calm, evidence-informed bridge between self-discovery and professional support.",
+    "url": "https://tryauren.com",
+    "from_email": "no-reply@tryauren.com"
+  },
+  "colors": {
+    "primary":          "#173B36",
+    "primaryLight":     "#2F5A52",
+    "accent":           "#7E9B91",
+    "accentLight":      "#AEBDB4",
+    "accentAccessible": "#436561",
+    "bg":               "#F7F6F2",
+    "surface":          "#FFFFFF",
+    "surfaceMuted":     "#EFF1EC",
+    "border":           "#DDE1DA",
+    "textPrimary":      "#172522",
+    "textSecondary":    "#5D6A66",
+    "textMuted":        "#636D69",
+    "input":            "#CDD5D0",
+    "secondary":        "#E9EEEA",
+    "primaryFg":        "#FFFFFF",
+    "success":          "#527A68",
+    "warning":          "#9A8151",
+    "error":            "#A65D5D",
+    "info":             "#607C85"
+  },
+  "darkColors": {
+    "bg":               "#0F1A17",
+    "primaryFg":        "#0F1A17",
+    "secondary":        "#1E302A",
+    "input":            "#2F3D39",
+    "surface":          "#172522",
+    "surfaceMuted":     "#1E302A",
+    "textPrimary":      "#EFF1EC",
+    "textSecondary":    "#89938F",
+    "textMuted":        "#7E9B91",
+    "accentAccessible": "#9BB8B0",
+    "border":           "#2F3D39",
+    "primary":          "#7E9B91",
+    "primaryLight":     "#AEBDB4",
+    "error":            "#C47070",
+    "success":          "#7E9B91"
+  },
+  "radius": {
+    "card":  "16px",
+    "pill":  "999px",
+    "input": "12px"
+  }
+}

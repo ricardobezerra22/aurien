@@ -24,10 +24,19 @@ export function ResultsPreview({
 				<div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 					<div>
 						<Reveal>
-							<h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.1] tracking-[-0.03em] text-text-primary font-normal mb-4">
+							<div className="flex items-center gap-3 mb-6">
+								<div className="w-5 h-px bg-sage" />
+								<span className="text-[0.6875rem] tracking-[0.1em] uppercase text-sage-dark font-medium">
+									Your results
+								</span>
+							</div>
+							<h2
+								className="text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.08] tracking-[-0.03em] text-text-primary font-normal mb-4"
+								style={{ fontFamily: "var(--font-fraunces, serif)" }}
+							>
 								{heading}
 							</h2>
-							<p className="text-base md:text-lg text-text-secondary leading-[1.6] mb-10">
+							<p className="text-base md:text-lg text-text-secondary leading-[1.65] mb-10">
 								{body}
 							</p>
 						</Reveal>
@@ -35,14 +44,23 @@ export function ResultsPreview({
 						{/* Result card mockup */}
 						<Reveal delay={0.08}>
 							<div
-								className="rounded-2xl border border-auren-border bg-surface shadow-[var(--shadow-elevated)] p-6"
+								className="rounded-2xl ring-1 ring-auren-border bg-surface shadow-[var(--shadow-elevated)] p-6"
 								aria-hidden="true"
 								role="presentation"
 							>
-								<p className="text-xs font-medium tracking-[0.06em] uppercase text-sage mb-4">
+								<p
+									className="text-[0.6875rem] tracking-[0.08em] uppercase text-sage-dark mb-5"
+									style={{ fontFamily: "var(--font-fraunces, serif)" }}
+								>
 									Screening result
 								</p>
-								<p className="text-sm text-text-secondary leading-[1.6] mb-8 pb-6 border-b border-auren-border">
+								<p
+									className="text-[1rem] text-text-secondary leading-[1.65] mb-8 pb-6 border-b border-auren-border"
+									style={{
+										fontFamily: "var(--font-fraunces, serif)",
+										fontStyle: "italic",
+									}}
+								>
 									{score}
 								</p>
 								<div className="flex flex-col gap-5">
@@ -56,9 +74,9 @@ export function ResultsPreview({
 													{categoryValues[i]}%
 												</span>
 											</div>
-											<div className="h-1.5 bg-surface-muted rounded-full overflow-hidden">
+											<div className="h-2 bg-surface-muted rounded-full overflow-hidden">
 												<div
-													className="h-full bg-sage rounded-full"
+													className="h-full bg-sage/70 rounded-full"
 													style={{ width: `${categoryValues[i]}%` }}
 												/>
 											</div>
@@ -71,7 +89,7 @@ export function ResultsPreview({
 
 					{/* Image */}
 					<Reveal delay={0.1}>
-						<div className="relative aspect-square rounded-2xl overflow-hidden">
+						<div className="relative aspect-square rounded-2xl overflow-hidden ring-1 ring-auren-border/40">
 							<Image
 								src="/images/tech-result.jpeg"
 								alt={imageAlt}
